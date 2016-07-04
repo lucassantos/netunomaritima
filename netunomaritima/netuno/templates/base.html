@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head runat="server">
+	<title>{% block titile %}{% endblock %}</title>
+  {% load staticfiles %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/geral.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+	<link id="page_favicon" rel="shortcut icon" href="{% static 'img/ico-netunos.ico' %}" type="image/x-icon" ></link>
+	<script src="{% static 'js/jQuery.js' %}"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+</head>
+
+<body class="geral">
+	<form id="frmGeral" runat="server">
+
+		<div class="menu">
+			<a href="/" class="logo" alt="Netuno Marítima">
+				<img src="{% static 'img/bg-logo.jpg'%}" alt="Netuno Marítima"	 />
+			</a>
+			<ul>
+				<li>
+					<a href="sobre" title="Conheça um pouco mais de como é funcionamento do Netuno">COMO FUNCIONA?</a>
+				</li>
+				<li>
+					<a href="como-funciona" title="Se cadastre ou acesso o perfil do Broker">MEU PERFIL</a>
+				</li>
+				<li style="border:0px;">
+					<a href="Contato.aspx" title="Nos mande suas sugestões, criticas ou dúvidas! Estamos aguardando.">CONTATO</a>
+				</li>
+			</ul>
+		</div>
+		<div class="principal">
+			{% block content %}{%endblock %}
+
+			<div class="rodape">
+
+				<ul>
+					<li>
+						<a href="Quem_Somos.aspx" title="Conheça um pouco mais sobre o Netuno Marítima" target="_blank">QUEM SOMOS</a>
+					</li>
+					<li>
+						<a href="EFabricantes.aspx" title="Conheça os Fabricantes de nossas embarcações" target="_blank">FABRICANTES</a>
+					</li>
+					<li>
+						<a href="Como_funciona.aspx" title="Conheça um pouco mais de como é funcionamento do Netuno" target="_blank">COMO FUNCIONA?</a>
+					</li>
+					<li style="display:none;">
+						<a href="Termos_de_uso.aspx" title="Brokers, conheça as regras do Netuno Marítima" target="_blank">TERMOS DE USO</a>
+					</li>
+					<li>
+						<a href="O_que_e_Broker.aspx" title="Trabalhamos diretamente com os brokers, conheça um pouco mais sobre o trabalho" target="_blank">O QUE É BROKER?</a>
+					</li>
+					<li>
+						<a href="Localizacao.aspx" title="Veja onde temos embarcações a venda" target="_blank">LOCALIZAÇÃO</a>
+					</li>
+					<li>
+						<a href="Meu_Perfil.aspx" title="Broker, acesse o seu perfil" target="_blank">MEU PERFIL</a>
+					</li>
+					<li style="border:0px;">
+						<a href="Contato.aspx" title="Nos mande suas sugestões, criticas ou dúvidas! Estamos aguardando." target="_blank">CONTATO</a>
+					</li>
+				</ul>
+
+				Todos os direitos reservados - 2013
+			</div>
+		</div>
+	</form>
+</body>
+</html>

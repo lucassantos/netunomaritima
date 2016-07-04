@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
+<head runat="server">
+  {% load staticfiles %}
+	<title>Netuno Marítima</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/home.css'%}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css'%}" />
+	<link id="page_favicon" rel="shortcut icon" href="{% static 'img/ico-netunos.ico'%}" type="image/x-icon" />
+</head>
+<body class="home">
+	<form id="frmHome" runat="server">
+
+		<div class="menu">
+			<a href="Default.aspx" class="logo" alt="Netuno Marítima">
+				<img src="{% static 'img/bg-logo.jpg'%}" alt="Netuno Marítima"	 />
+			</a>
+			<ul>
+				<li>
+					<a href="sobre" title="Conheça um pouco mais de como é funcionamento do Netuno">COMO FUNCIONA?</a>
+				</li>
+				<li>
+					<a href="como-funciona" title="Broker, acesse o seu perfil">MEU PERFIL</a>
+				</li>
+				<li style="border:0px;">
+					<a href="contato" title="Nos mande suas sugestões, criticas ou dúvidas! Estamos aguardando.">CONTATO</a>
+				</li>
+			</ul>
+		</div>
+
+		<div class="principal">
+			<div class="noticia-destaque">
+				<div class="desc">
+					<p class="ttl">
+						Abrindo as Portas
+					</p>
+					<p>
+						Sim meus caros, estamos oficialmente abrindo as portas da Netuno Marítima, conheça um pouco mais sobre o funcionamento.
+					</p>
+
+					<a href="sobre" class="btn"></a>
+				</div>
+
+				<img src="{% static 'img/Lady-Lau-01.png'%}" />
+			</div>
+
+			<div class="busca">
+				<h3>ENCONTRE O SEU BARCO</h3>
+
+				<p>
+					Tipo de embarcação
+					<select class="form-control" Width="194">
+            <option>Selecione</option>
+          </select>
+				</p>
+
+				<p>
+					Preço
+					<asp:DropDownList runat="server" id="ddlPrecoAte" Width="84" />
+					<asp:DropDownList runat="server" id="ddlPrecoDe" Style="margin-right:16px;" Width="84" />
+				</p>
+
+				<p>
+					Comprimento
+					<asp:DropDownList runat="server" id="ddlComprimentoAte" Width="84" />
+					<asp:DropDownList runat="server" id="ddlComprimentoDe" Style="margin-right:16px;" Width="84" />
+				</p>
+
+				<p>
+					Convidados
+					<asp:DropDownList runat="server" id="ddlConvidados" Width="194" />
+				</p>
+
+				<p>
+					Ano
+					<asp:DropDownList runat="server" id="ddlAno" Width="194" />
+				</p>
+				<asp:LinkButton runat="server" id="lnkFiltrar" OnClick="lnkFiltrar_Click" CssClass="btn" />
+			</div>
+
+			<div class="conteudo">
+				<div class="col_left">
+					<a href="Como_funciona.aspx" title="">
+						<img src="{% static 'img/bg-clique-descubra.jpg'%}" />
+					</a>
+
+					<a href="https://www.facebook.com/NetunoMaritima" title="FanPage - Netuno Marítima" target="_blank">
+						<img src="{% static 'img/bg-siga-nosso-guia.jpg'%}" />
+					</a>
+
+					<a href="Localizacao.aspx" title="Nossos brokers no Brasil">
+						<img src="{% static 'img/bg-localizacao.jpg'%}" />
+					</a>
+				</div>
+
+				<div class="col_right">
+					<p>
+						<img src="{% static 'img/ttl-destaques.jpg'%}" />
+					</p>
+
+					<ul>
+						<asp:Repeater runat="server" id="rptEmbarcacoes">
+							<ItemTemplate>
+								<li style="margin-right:6px;">
+									<a href="Embarcacao.aspx?ID= <%# Eval("ID") %>" title="<%# Eval("Titulo") %>">
+										<img src="Brain/ <%# Eval("Fotos[0].Caminho") %>" style="width:340px;height:201px;" />
+										<img class="pic img-circle" src="Brain/ <%# Eval("BrokerFoto") %>" />
+										<div class="desc">
+											<p class="ttl"><%# Eval("Titulo") %></p>
+											<span class="desc_left">
+												<ul>
+													<li>Construtor</li>
+													<li>Ano</li>
+													<li>Comprimento</li>
+												</ul>
+											</span>
+											<span class="desc_right">
+												<ul>
+													<li><%# Eval("Fabricante.Nome") %></li>
+													<li><%# Eval("Ano") %></li>
+													<li><%# Eval("Comprimento") %></li>
+												</ul>
+											</span>
+										</div>
+									</a>
+								</li>
+							</ItemTemplate>
+						</asp:Repeater>
+					</ul>
+				</div>
+			</div>
+
+			<div class="rodape">
+
+				<ul>
+					<li>
+						<a href="Quem_Somos.aspx" title="Conheça um pouco mais sobre o Netuno Marítima" target="_blank">QUEM SOMOS</a>
+					</li>
+					<li>
+						<a href="EFabricantes.aspx" title="Conheça os Fabricantes de nossas embarcações" target="_blank">FABRICANTES</a>
+					</li>
+					<li>
+						<a href="Como_funciona.aspx" title="Conheça um pouco mais de como é funcionamento do Netuno" target="_blank">COMO FUNCIONA?</a>
+					</li>
+					<li style="display:none;">
+						<a href="Termos_de_uso.aspx" title="Brokers, conheça as regras do Netuno Marítima" target="_blank">TERMOS DE USO</a>
+					</li>
+					<li>
+						<a href="O_que_e_Broker.aspx" title="Trabalhamos diretamente com os brokers, conheça um pouco mais sobre o trabalho" target="_blank">O QUE É BROKER?</a>
+					</li>
+					<li>
+						<a href="Localizacao.aspx" title="Veja onde temos embarcações a venda" target="_blank">LOCALIZAÇÃO</a>
+					</li>
+					<li>
+						<a href="Meu_Perfil.aspx" title="Broker, acesse o seu perfil" target="_blank">MEU PERFIL</a>
+					</li>
+					<li style="border:0px;">
+						<a href="Contato.aspx" title="Nos mande suas sugestões, criticas ou dúvidas! Estamos aguardando." target="_blank">CONTATO</a>
+					</li>
+				</ul>
+
+				Todos os direitos reservados - 2013
+			</div>
+
+		</div>
+	</form>
+</body>
+</html>

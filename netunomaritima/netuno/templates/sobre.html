@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Bem vindo{% endblock %}
+{% load staticfiles %}
+{% block content %}
+<div class="col_left">
+  <a href="Como_funciona.aspx" title="">
+    <img src="{% static 'img/bg-clique-descubra.jpg'%}" />
+  </a>
+
+  <a href="https://www.facebook.com/NetunoMaritima" title="FanPage - Netuno Marítima" target="_blank">
+    <img src="{% static 'img/bg-siga-nosso-guia.jpg'%}" />
+  </a>
+
+  <a href="Localizacao.aspx" title="Nossos brokers no Brasil">
+    <img src="{% static 'img/bg-localizacao.jpg'%}" />
+  </a>
+</div>
+
+<div class="col_right">
+  <h1>QUEM SOMOS</h1>
+  <p>
+    Assim como boa parte das grandes ideias, a Netuno Marítima surgiu por um acaso. Foi  praticamente como uma maçã caindo sobre nossas cabeças.
+    A faísca eclodiu durante uma conversa inesperada em determinado momento, e acabou se tornando uma grande fogueira com várias pessoas envolvidas.
+    A ideia germinou e se tornou um projeto interno da <a href="http://www.solutio42.net" title="Solutio42 - Soluções Ricas em Internet">Solutio42</a>
+    que investiu ainda mais no conceito, tornando-se este portal especializado em embarcações que hoje temos.
+  </p>
+  <p>
+    Nascida durante o ano de 2011, sempre tivemos em mente que o projeto poderia dar certo.
+    Utilizamos o que tínhamos e, com o apoio de amigos/parceiros durante horas exaustivas de trabalho, lutamos para fazer acontecer. Conseguimos.
+  </p>
+  <p>
+    Hoje a Netuno Marítima é composta por duas empresas maiores que, unidas, buscam em seu dia a dia a melhor apresentação e maior satisfação de quem utiliza nossos serviços.
+    Claro, ainda estamos bem no início, mas acreditamos que com humildade e qualidade podemos chegar ao longe, desbravando em conjunto de pessoas de confiança, a cada dia mais e mais, desse gigante azul em que vivemos. O nosso Planeta Água.
+  </p>
+</div>
+
+{% endblock %}

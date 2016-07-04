@@ -1,0 +1,272 @@
+/* Zerando */
+*{
+	margin:0px;
+	padding:0px;
+	list-style:none;
+	font-family: Arial;
+}
+
+/* Home */
+.home{
+	background:url('../img/bg-fundo-home.jpg') no-repeat;
+	line-height:14px;
+}
+
+.home li{
+	line-height:14px;
+}
+
+.home .menu{
+	background: url('../img/menu-top-fd.png') repeat-x;
+	height: 215px;
+	width: 100%;
+	overflow:hidden;
+}
+
+.home .menu .logo{
+	background: url('../img/menu-top-logo.png') repeat-x;
+	float: left;
+	width: 531px;
+	height: 216px;
+	position: relative;
+	margin-left: 75px;
+}
+
+.home .menu .logo img{
+	top: 26px;
+	position: absolute;
+	left: 162px;
+}
+
+.home .menu ul{
+	display: inline-table;
+	height: 20px;
+	margin-top: 20px;
+	width: 450px;
+	float: left;
+	margin-left: 70px;
+}
+
+.home .menu li{
+	display:inline-block;
+	border-right:#fff 1px dashed;
+}
+
+.home .menu li a{
+	color: #fff;
+	text-decoration: none;
+	font-size: 11px;
+	margin: 0px 35px 0px 35px;
+	font-weight:bold;
+}
+
+.home .principal{
+	width:965px;
+	margin:0 auto;
+	min-height:500px;
+	position:relative;
+}
+
+.home .principal .busca{
+	background: url('../img/fd-busca.png') no-repeat;
+	width: 352px;
+	height: 352px;
+	position: absolute;
+	top: -65px;
+	right: 10px;
+	padding:23px 16px 0px 16px;
+	color:#444444;
+	font-size: 11px;
+	font-weight: bold;
+}
+
+.home .principal .busca h3{
+	font-size: 16px;
+	color: #2472ba;
+	font-weight: bold;
+	line-height: 20px;
+	margin: 0px;
+}
+
+.home .principal .busca p{
+	margin:28px 0px 28px 0px;
+	text-align:right;
+}
+
+.home .principal .busca select{
+	float:right;
+	margin-left:10px;
+	font-size:11px;
+}
+
+.home .principal .busca a{
+	color:#21b0fc;
+	text-align:right;
+	text-decoration: none;
+	display:block;
+	font-size:12px;
+}
+
+.home .principal .busca .btn{
+	background: url('../img/btn-busca.png') no-repeat;
+	position: absolute;
+	width: 121px;
+	height: 54px;
+	left: 112px;
+	bottom: 6px;
+	text-indent: -666em;
+	overflow:hidden;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	border:0px;
+	padding:0px;
+}
+
+.home .principal .noticia-destaque .desc{
+	background-color: #fff;
+	width: 452px;
+	position: absolute;
+	top: 140px;
+	padding:20px;
+}
+
+.home .principal .noticia-destaque .desc .ttl{
+	font-size: 16px;
+	color: #2472ba;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.home .principal .noticia-destaque .desc p{
+	color: #898989;
+	font-size: 13px;
+	text-align: justify;
+}
+
+.home .principal .noticia-destaque .desc .btn{
+	background: url('../img/btn-saiba-mais.png') no-repeat;
+	position: absolute;
+	width: 121px;
+	height: 54px;
+	left: -1px;
+	bottom: -54px;
+	text-indent: -666em;
+	overflow: hidden;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	border:0px;
+	padding:0px;
+}
+
+.home .principal .conteudo .col_right{
+	float:right;
+	width: 702px;
+	min-height: 764px;
+	margin-left: 18px;
+}
+
+.home .principal .conteudo .col_right ul{
+	margin-left: 0px;
+}
+
+.home .principal .conteudo .col_right ul li{
+	width:342px;
+	height:326px;
+	display:inline-block;
+	margin:8px 0px 5px 0px;
+	position:relative;
+}
+
+.home .principal .conteudo .col_right ul li a img{
+	float:left;
+}
+
+.home .principal .conteudo .col_right ul li a .desc{
+	width: 340px;
+	height: 126px;
+	float:left;
+	background: url('../img/bg-content.jpg') no-repeat;
+	font-size: 12px;
+}
+
+.home .principal .conteudo .col_right ul li a .desc li{
+	margin: 0px;
+	height: 10px;
+	width: 165px;
+	line-height:16px;
+}
+
+.home .principal .conteudo .col_right ul li a .desc .desc_left{
+	display: inline-block;
+	width: 155px;
+	text-align:right;
+	color:#aaa;
+	margin-right:16px;
+}
+
+.home .principal .conteudo .col_right ul li a .desc .desc_right{
+	display: inline-block;
+	width: 165px;
+	color:#434343;
+}
+
+.home .principal .conteudo .col_right ul li a .pic{
+	position: absolute;
+	top: 160px;
+	left: 135px;
+	width: 65px;
+	height: 65px;
+	background-color: #fff;
+	padding: 4px;
+}
+
+.home .principal .conteudo .col_right ul li a .desc .ttl{
+	border-bottom:0px;
+	font-size: 13px;
+	color: #2472ba;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: center;
+	margin-top: 39px;
+	height:15px;
+}
+
+.home .principal .conteudo .col_right p{
+	border-bottom: #2474bb 1px solid;
+	height: 34px;
+	margin-top: 10px;
+}
+
+.home .principal .conteudo .col_left{
+	width: 241px;
+	display:inline-block;
+}
+
+.home .principal .conteudo .col_left a{
+	display: block;
+	width: 241px;
+	margin:11px 0px;
+}
+
+.home .principal .rodape{
+	background: url('../img/fd_rodape.png') no-repeat;
+	display: block;
+	padding-top: 390px;
+	text-transform: uppercase;
+	font-size: 10px;
+	margin-bottom: 30px;
+	background-position: 0px 355px;
+	text-align: center;
+}
+
+.home .principal .rodape ul{
+	width: 500px;
+	display: block;
+	margin: 0 auto 30px;
+	text-align: center;
+}
+
+.home .principal .rodape li{
+	display: inline-block;
+	margin-right: 5px;
+}
