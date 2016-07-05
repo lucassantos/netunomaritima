@@ -3,13 +3,13 @@ from __future__ import unicode_literals
 from django.db import models
 
 def usuario_directory_path(instance, filename):
-   return 'media/usuario/{0}_{1}'.format(instance.id, instance.nome)
+   return 'media/usuario/{0}_{1}_{2}'.format(instance.id, instance.nome, filename)
 
 def anuncio_directory_path(instance, filename):
-   return 'media/anuncios/{0}_{1}'.format(instance.id, instance.titulo)
+   return 'media/anuncios/{0}_{1}_{2}'.format(instance.id, instance.titulo, filename)
 
 def produtos_directory_path(instance, filename):
-   return 'media/produtos/{0}_{1}'.format(instance.produto.id, instance.id)
+   return 'media/produtos/{0}_{1}_{2}'.format(instance.produto.id, instance.id, filename)
 
 class Estado(models.Model):
     id = models.AutoField(primary_key=True)
@@ -65,12 +65,11 @@ class Produto(models.Model):
     descricao = models.CharField(max_length=1024)
     subcategoria = models.ForeignKey(SubCategoria, null=True)
     preco = models.DecimalField(default=0, decimal_places=2, max_digits=14)
-    senha = models.CharField(max_length=256)
     usuario = models.ForeignKey(Usuario, null=True, related_name="produtos")
     class Meta:
         verbose_name_plural = "Produtos"
     def __unicode__(self):
-        return str(self.nome)
+        return str(self.titulo)
 
 class Foto(models.Model):
     id = models.AutoField(primary_key=True)

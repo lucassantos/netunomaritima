@@ -23,4 +23,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', home),
     url(r'^sobre/$', sobre),
+    url(r'^api/produtos/$', produtos),
+    url(r'^api/usuarios/$', usuarios),
 ] + static(settings.STATIC_URL, document_root=settings.BASE_DIR)
