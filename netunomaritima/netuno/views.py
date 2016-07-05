@@ -45,8 +45,78 @@ def produtos(request):
             query = query.filter(usuario__id=usuario__id)
 
 
-    lista = serialize('json', query, fields=["titulo", "descricao", "subcategoria", "preco", "usuario"])
+    lista = serialize('json', query, fields=["titulo", "descricao", "subcategoria", "preco", "usuario", "fotos"])
 
+    return HttpResponse(lista, content_type='application/json')
+
+def estados(request):
+    # Filtros
+    id = request.GET.get("id")
+    estado = request.GET.get("estado")
+
+    query = Estado.objects.all()
+
+    if(id):
+        query = query.filter(id=id)
+    else:
+        if(estado):
+            query = query.filter(nome__icontains=estado)
+
+    lista = serialize('json', query, fields=["nome"])
+    return HttpResponse(lista, content_type='application/json')
+
+def cidades(request):
+    # Filtros
+    id = request.GET.get("id")
+    cidade = request.GET.get("cidade")
+    estado_id = request.GET.get("estado_id")
+
+    query = Cidade.objects.all()
+
+    if(id):
+        query = query.filter(id=id)
+    else:
+        if(cidade):
+            query = query.filter(nome__icontains=cidade)
+        if(estado_id):
+            query = query.filter(estado__id=estado__id)
+
+    lista = serialize('json', query, fields=["nome", "estado"])
+    return HttpResponse(lista, content_type='application/json')
+
+def categorias(request):
+    # Filtros
+    id = request.GET.get("id")
+    categoria = request.GET.get("categoria")
+
+    query = Categoria.objects.all()
+
+    if(id):
+        query = query.filter(id=id)
+    else:
+        if(categoria):
+            query = query.filter(titulo__icontains=estado)
+
+    lista = serialize('json', query, fields=["titulo"])
+    return HttpResponse(lista, content_type='application/json')
+
+def subcategorias(request):
+    # Filtros
+    id = request.GET.get("id")
+    subcategoria = request.GET.get("subcategoria")
+    categoria_id = request.GET.get("categoria_id")
+
+    query = SubCategoria.objects.all()
+
+    if(id):
+        query = query.filter(id=id)
+    else:
+        if(subcategoria):
+            query = query.filter(titulo__icontains=cidade)
+        if(categoria_id):
+            query = query.filter(categoria__id=estado__id)
+
+    lista = serialize('json', query, fields=["titulo", "subcategoria"])
     return HttpResponse(lista, content_type='application/json')
 
 def usuarios(request):
@@ -72,7 +142,30 @@ def usuarios(request):
             query=query.filter(bairro__icontains=bairro)
 
 
-
     lista = serialize('json', query, fields=["nome", "email", "cidade", "bairro", "upload"])
+    return HttpResponse(lista, content_type='application/json')
 
+def anuncios(request):
+    # Filtros
+    id = request.GET.get("id")
+    anuncio = request.GET.get("anuncio")
+    representante = request.GET.get("representante")
+    ativo = request.GET.get("ativo")
+    email = request.GET.get("email")
+
+    query = Anuncio.objects.all()
+
+    if(id):
+        query = query.filter(id=id)
+    else:
+        if(anuncio):
+            query = query.filter(titulo__icontains=cidade)
+        if(representante):
+            query = query.filter(representante__id=representante)
+        if(ativo):
+            query = query.filter(ativo=ativo)
+        if(email):
+            query = query.filter(email=email)
+
+    lista = serialize('json', query, fields=["titulo", "link", "upload", "representante", "ativo", "email"])
     return HttpResponse(lista, content_type='application/json')
